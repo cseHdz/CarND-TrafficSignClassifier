@@ -20,7 +20,7 @@ More details on the instructions for this project [can be found here.](./instruc
 
 [image1]: ./outputs/dataset_class_distributions.png "Class Distribution"
 [image2]: ./outputs/signs.png "Sample of 10 signs"
-[image3]: ./outputs/signs_pre.png "Sample of 10 Preprocessed Signs"
+[image3]: ./outputs/signs-pre.png "Sample of 10 Preprocessed Signs"
 [image4]: ./new_signs/Crossing.jpg "Traffic Sign 1"
 [image5]: ./new_signs/NoSpeed.png "Traffic Sign 2"
 [image6]: ./new_signs/Stop.jpg "Traffic Sign 3"
@@ -81,31 +81,21 @@ In terms of architecture, I implemented LeNet using both Tensorflow and Keras. P
 
 My final model consisted of the following layers:
 
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
-=================================================================
-conv2d_1 (Conv2D)            (None, 28, 28, 6)         156       
-_________________________________________________________________
-max_pooling2d_1 (MaxPooling2 (None, 14, 14, 6)         0         
-_________________________________________________________________
-conv2d_2 (Conv2D)            (None, 10, 10, 16)        2416      
-_________________________________________________________________
-max_pooling2d_2 (MaxPooling2 (None, 5, 5, 16)          0         
-_________________________________________________________________
-flatten_1 (Flatten)          (None, 400)               0         
-_________________________________________________________________
-dropout_1 (Dropout)          (None, 400)               0         
-_________________________________________________________________
-dense_1 (Dense)              (None, 120)               48120     
-_________________________________________________________________
-dense_2 (Dense)              (None, 84)                10164     
-_________________________________________________________________
-dropout_2 (Dropout)          (None, 84)                0         
-_________________________________________________________________
-dense_3 (Dense)              (None, 43)                3655      
+|Layer (type)           |     Output Shape            |   Param #    |
+|:---------------------:|:------------------------------------------:| 
+| conv2d_1 (Conv2D)            |(None, 28, 28, 6)     |    156       |
+| max_pooling2d_1 (MaxPooling2 |(None, 14, 14, 6)     |    0         |
+| conv2d_2 (Conv2D)            |(None, 10, 10, 16)    |    2416      |
+| max_pooling2d_2 (MaxPooling2 |(None, 5, 5, 16)      |    0         |
+| flatten_1 (Flatten)          |(None, 400)           |    0         |
+| dropout_1 (Dropout)          |(None, 400)           |    0         |
+| dense_1 (Dense)              |(None, 120)           |    48120     |
+| dense_2 (Dense)              |(None, 84)            |    10164     |
+| dropout_2 (Dropout)          |(None, 84)            |    0         |
+| dense_3 (Dense)              |(None, 43)            |    3655      |
 _________________________________________________________________
 
-=================================================================
+
 Total params: 64,511
 Trainable params: 64,511
 Non-trainable params: 0
@@ -148,7 +138,16 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
-The first image might be difficult to classify because ...
+The first image might be difficult to classify because of the half-light/half-dark background, which will influence the grayscale component of the image.
+
+The second image will be very simple to classify as it very similar to a the output of a preprocessed image.
+
+The third image will be very simple to classify as it a very standard picture of a stop sign.
+
+The fourth image will be easier to classify versus image 1. The background contrasts very sharply with the sign is of a consistent pattern.
+
+The fifth image will be mildly difficult to classify given the high saturation of the image. 
+
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set 
 Here are the results of the prediction:
