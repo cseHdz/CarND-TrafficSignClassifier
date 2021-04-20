@@ -85,7 +85,7 @@ In terms of architecture, I implemented LeNet using both Tensorflow and Keras. P
 My final model consisted of the following layers:
 
 |Layer (type)           |     Output Shape            |   Param #    |
-|:---------------------:|:------------------------------------------:| 
+|:---------------------:|:----------------------------|-------------:| 
 | conv2d_1 (Conv2D)            |(None, 28, 28, 6)     |    156       |
 | max_pooling2d_1 (MaxPooling2 |(None, 14, 14, 6)     |    0         |
 | conv2d_2 (Conv2D)            |(None, 10, 10, 16)    |    2416      |
